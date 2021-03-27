@@ -15,7 +15,8 @@ function generateMarkdown(data) {
   return `
   # ${data.title}
 
-  ## ${data.description}
+  ## Description
+  ${data.description}
  
   ## Table of Contents
   - [Description](#description)
@@ -26,17 +27,23 @@ function generateMarkdown(data) {
   - [Tests](#tests)
   - [Questions](#questions)
 
-  ## ${data.installations}
+  ## Installations
+  ${data.installations}
 
-  ## ${data.usage}
+  ## Usage
+  ${data.usage}
 
-  ## ${data.license}
+  ## Licenses
+   ${data.license}
 
-  ## ${data.contributors}
+  ## Contributors
+  ${data.contributors}
 
-  ## ${data.tests}
+  ## Tests
+  ${data.tests}
 
-  ## ${data.questions}
+  ## Questions 
+  ${data.questions}
   [Please reach out to ${data.email} with any questions]
   [I can also be reached at my Github profile](https://github.com/${data.username})
 

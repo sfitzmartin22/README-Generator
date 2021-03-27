@@ -2,7 +2,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
-const axios = require('axios');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -62,21 +61,21 @@ const questions = [
 // TODO: Create a function to write README file
 //function writeToFile("README.md", data) {
 
-//}//
+//}
 
 // TODO: Create a function to initialize app
 function init() {
 inquirer.prompt(questions)
-.then(data => {
-    fs.writeToFile("NewREADME.md",generateMarkdown(data));
+.then((data) => {
+    filename = "README2.md"
+   fs.writeFileSync(filename,generateMarkdown(data));
     console.log(data);
+    console.log("your new READMe file has been generated!")
 })
 .catch(error => {
-    if(error.isError){
-    console.log("error")
-    } else {
-    console.log("your new READMe file has been generated!")
-    }
+    
+    console.log(error)
+    
 })    
 }
 
