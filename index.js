@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateMarkdown = require('./util/generateMarkdown-markdown');
+const generateMarkdown = require('./utils/generateMarkdown');
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -26,8 +26,8 @@ const questions = [
      },
      {
         type: "input", //need to change to a list//
-        Message: "What are the necessary licenses for this project?"
-        name: "license", 
+        Message: "What are the necessary licenses for this project?",
+        name: "licenses", 
      },
      {
         type: "input",
@@ -56,8 +56,7 @@ const questions = [
      },
 ];
 
-.prompt(questions);
-
+inquirer.prompt(questions);
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
 
