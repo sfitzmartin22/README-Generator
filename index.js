@@ -26,9 +26,9 @@ const questions = [
         name: "usage", 
      },
      {
-        type: "input", //need to change to a list//
+        type: "list", //need to change to a list//
         Message: "What are the necessary licenses for this project?",
-        name: "licenses", 
+        choices: ["MIT","Apache"] 
      },
      {
         type: "input",
