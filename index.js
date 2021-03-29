@@ -69,7 +69,7 @@ const questions = [
 function init() {
 inquirer.prompt(questions)
 .then((data) => {
-    filename = "README2.md"
+    filename = "README.md"
     
 
    fs.writeFileSync(filename,generateMarkdown(data));
