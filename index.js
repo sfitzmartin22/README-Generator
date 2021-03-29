@@ -3,6 +3,10 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 
+const licenseMIT = "https://opensource.org/licenses/MIT"
+const licenseApache = "https://opensource.org/licenses/Apache-2.0"
+
+
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -28,6 +32,7 @@ const questions = [
      {
         type: "list", //need to change to a list//
         Message: "What are the necessary licenses for this project?",
+        name: "license",
         choices: ["MIT","Apache"] 
      },
      {
@@ -43,7 +48,7 @@ const questions = [
      {
         type: "input",
         Message: "Please enter any FAQ that have come up pertaining to your application",
-        name: "Questions", 
+        name: "questions", 
      },
      {
         type: "input",
@@ -68,6 +73,8 @@ function init() {
 inquirer.prompt(questions)
 .then((data) => {
     filename = "README2.md"
+    
+
    fs.writeFileSync(filename,generateMarkdown(data));
     console.log(data);
     console.log("your new READMe file has been generated!")
