@@ -3,9 +3,6 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 
-const licenseMIT = "https://opensource.org/licenses/MIT"
-const licenseApache = "https://opensource.org/licenses/Apache-2.0"
-
 
 // TODO: Create an array of questions for user input
 const questions = [
